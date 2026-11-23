@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_guide"
+        android:icon="@drawable/ic_guide"
+        android:title="@string/guide" />
+
+    <item
+        android:id="@+id/nav_ido_dotan"
+        android:icon="@drawable/ic_person"
+        android:title="@string/ido_dotan" />
+
+    <item
+        android:id="@+id/nav_sites"
+        android:icon="@drawable/ic_sites"
+        android:title="@string/sites" />
+
+    <item
+        android:id="@+id/nav_videos"
+        android:icon="@drawable/ic_videos"
+        android:title="@string/videos" />
+
+</menu>

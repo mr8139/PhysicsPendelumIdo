@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".GraphicsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pendulum_graphs"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_displacement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/displacement_graph"/>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_displacement"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_velocity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/velocity_graph"/>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_velocity"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_acceleration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/acceleration_graph"/>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_acceleration"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/button_energy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/energy_graph"/>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_energy"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

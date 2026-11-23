@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">PhysicsPendulumIdo</string>
+
+    <!-- MainActivity -->
+    <string name="log_in">Log In</string>
+    <string name="registry">Registry</string>
+    <string name="calculations">Calculations</string>
+    <string name="formulas">Formulas</string>
+    <string name="graphics">Graphics</string>
+    <string name="history">History</string>
+    <string name="animation">Animation</string>
+    <string name="video">Video</string>
+    <string name="sensors">Sensors</string>
+    <string name="info">Info</string>
+    <string name="menu">Menu</string>
+    <string name="back">Back</string>
+    <string name="exit">Exit</string>
+    <string name="log_out">Log Out</string>
+
+    <!-- LogInFragment -->
+    <string name="enter_your_code">Username</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="please_enter_password">Please enter your password.</string>
+    <string name="login_successful">Login successful!</string>
+    <string name="invalid_code_or_password">Invalid username or password.</string>
+
+    <!-- RegistryFragment -->
+    <string name="register">Register</string>
+    <string name="registration_successful">Registration successful!</string>
+    <string name="registration_failed">Registration failed. Please try again.</string>
+    <string name="code_already_exists">Username already exists. Please choose another one.</string>
+    <string name="invalid_code_format">Invalid username format.</string>
+    <string name="password_too_short">Password must be at least 6 characters.</string>
+    <string name="username_cannot_be_empty">Username cannot be empty.</string>
+
+    <!-- PendulumCalculatorFragment -->
+    <string name="select_what_to_calculate">Select what to calculate:</string>
+    <string name="period_t">Period (T)</string>
+    <string name="gravity_g">Gravity (g)</string>
+    <string name="length_l">Length (L)</string>
+    <string name="pendulum_length_l_in_meters">Pendulum length (L, in meters)</string>
+    <string name="gravitational_acceleration_g_in_m_s">Gravitational acceleration (g, in m/s²)</string>
+    <string name="oscillation_period_t_in_seconds">Oscillation period (T, in seconds)</string>
+    <string name="calculate">Calculate</string>
+    <string name="please_enter_valid_values">Please enter valid values</string>
+
+    <!-- FormulasFragment -->
+    <string name="mathematical_pendulum">Mathematical Pendulum</string>
+    <string name="period_of_oscillation">Period of Oscillation</string>
+    <string name="formula_period">T = 2π√(L/g)</string>
+    <string name="legend">Legend:</string>
+    <string name="period_legend">T - Period, the time of one full oscillation (s)</string>
+    <string name="pi_legend">π - Mathematical constant Pi (≈ 3.14159)</string>
+    <string name="length_legend">L - Length of the pendulum suspension (m)</string>
+    <string name="gravity_legend">g - Acceleration of free fall (≈ 9.8 m/s²)</string>
+    <string name="frequency_of_oscillation">Frequency of Oscillation</string>
+    <string name="formula_frequency">f = 1/T</string>
+    <string name="frequency_legend">f - Frequency of oscillation (Hz)</string>
+    <string name="angular_frequency">Angular Frequency</string>
+    <string name="formula_angular_frequency">ω = 2πf</string>
+    <string name="angular_frequency_legend">ω - Angular frequency (rad/s)</string>
+    <string name="equation_of_motion">Equation of Motion</string>
+    <string name="formula_equation_of_motion">x(t) = A·cos(ωt + φ)</string>
+    <string name="motion_equation_legend_x">x(t) - Displacement from equilibrium position at time t</string>
+    <string name="motion_equation_legend_a">A - Amplitude of oscillations (m)</string>
+    <string name="motion_equation_legend_t">t - Time (s)</string>
+    <string name="motion_equation_legend_phi">φ - Initial phase of oscillations (rad)</string>
+    <string name="restoring_force">Restoring Force</string>
+    <string name="formula_restoring_force">F = -m·g·sin(α)</string>
+    <string name="restoring_force_legend_f">F - Restoring force (N)</string>
+    <string name="restoring_force_legend_m">m - Mass of the pendulum (kg)</string>
+    <string name="restoring_force_legend_alpha">α - Angle of deviation from the vertical (rad)</string>
+    <string name="potential_energy">Potential Energy</string>
+    <string name="formula_potential_energy">Ep = m·g·h</string>
+    <string name="potential_energy_legend_ep">Ep - Potential energy (J)</string>
+    <string name="potential_energy_legend_h">h - Height of the pendulum lift (m)</string>
+    <string name="kinetic_energy">Kinetic Energy</string>
+    <string name="formula_kinetic_energy">Ek = (m·v²)/2</string>
+    <string name="kinetic_energy_legend_ek">Ek - Kinetic energy (J)</string>
+    <string name="kinetic_energy_legend_v">v - Velocity of the pendulum (m/s)</string>
+
+    <!-- GraphicsFragment -->
+    <string name="pendulum_graphs">Pendulum Graphs</string>
+    <string name="displacement_graph">Displacement vs. Time</string>
+    <string name="velocity_graph">Velocity vs. Time</string>
+    <string name="acceleration_graph">Acceleration vs. Time</string>
+    <string name="energy_graph">Energy vs. Time</string>
+
+    <!-- InfoActivity -->
+    <string name="guide">Guide</string>
+    <string name="ido_dotan">Ido Dotan</string>
+    <string name="sites">Sites</string>
+    <string name="videos">Videos</string>
+
+    <!-- Database Operations -->
+    <string name="db_operation_successful">Database operation successful.</string>
+    <string name="db_operation_failed">Database operation failed.</string>
+
+    <!-- SensorMeasurementFragment -->
+    <string name="start_measurement">Start Measurement</string>
+    <string name="stop_measurement">Stop Measurement</string>
+    <string name="measuring">Measuring...</string>
+    <string name="countdown">Starting in: %d</string>
+    <string name="ready">Ready</string>
+    <string name="show_results">Show Results</string>
+    <string name="measurement_done">Measurement Done!</string>
+    <string name="oscillation_count">Oscillations: %d</string>
+    <string name="result_period">Period: %.3f s</string>
+    <string name="result_frequency">Frequency: %.3f Hz</string>
+    <string name="result_length">Estimated Length: %.3f m</string>
+    <string name="instruction_attach_phone">Attach phone to the pendulum and press Start.</string>
+    <string name="save_results">Save Results</string>
+
+    <!-- IdoDotanFragment (About Developer) -->
+    <string name="background_title">Background</string>
+    <string name="about_developer">About the Developer</string>
+    <string name="developer_name">Ido Dottan</string>
+    <string name="developer_title">Software Engineering Student</string>
+    <string name="developer_bio">As a physics student myself, I have seen the complexity involved in learning this subject, which is why I designed this application to help students and enthusiasts understand the dynamics of pendulums through interactive simulations and precise calculations.</string>
+    <string name="contact_title">Get in Touch</string>
+    <string name="contact_email">Email: idod2020@shitim.co.il</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

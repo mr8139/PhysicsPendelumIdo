@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormulasFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mathematical_pendulum"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Period -->
+                <Button
+                    android:id="@+id/button_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                    <!-- Card content from image -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/period_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pi_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/length_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gravity_legend"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Frequency -->
+                <Button
+                    android:id="@+id/button_frequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_frequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/frequency_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/period_legend"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Angular Frequency -->
+                <Button
+                    android:id="@+id/button_angular_frequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_angular_frequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/angular_frequency_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pi_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/frequency_legend"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Equation of Motion -->
+                <Button
+                    android:id="@+id/button_motion_equation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_motion_equation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motion_equation_legend_x"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motion_equation_legend_a"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/angular_frequency_legend"/>
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motion_equation_legend_t"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/motion_equation_legend_phi"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Restoring Force -->
+                <Button
+                    android:id="@+id/button_restoring_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_restoring_force"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restoring_force_legend_f"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restoring_force_legend_m"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gravity_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restoring_force_legend_alpha"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Potential Energy -->
+                <Button
+                    android:id="@+id/button_potential_energy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_potential_energy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/potential_energy_legend_ep"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restoring_force_legend_m"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gravity_legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/potential_energy_legend_h"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Kinetic Energy -->
+                <Button
+                    android:id="@+id/button_kinetic_energy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_kinetic_energy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/legend"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kinetic_energy_legend_ek"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/restoring_force_legend_m"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kinetic_energy_legend_v"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Guide"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Section 1 -->
+        <Button
+            android:id="@+id/btn_section1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Registration and Login"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="When you first launch the app, you need to register or log in. Most features are only available to authorized users.\n\n• Registration: Enter a unique user code and a date.\n• Login: Use your credentials to access the protected features." />
+
+        <!-- Section 2 -->
+        <Button
+            android:id="@+id/btn_section2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Pendulum Simulation (Animation)"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="In this section, you can interact with a visual model of a mathematical pendulum.\n\n• Use the slider (SeekBar) at the bottom of the screen to change the length of the pendulum string.\n• The app automatically calculates the oscillation period (T) using the formula T = 2π√(L/g) and displays it on the screen." />
+
+        <!-- Section 3 -->
+        <Button
+            android:id="@+id/btn_section3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Sensor Measurement (Sensors)"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="This tool allows you to measure the period of a real pendulum using your phone's accelerometer.\n\n1. Securely attach the phone to the pendulum bob (mass).\n2. Tap the 'Start Measurement' button.\n3. A 10-second countdown will begin, accompanied by beeps. Use this time to start the pendulum swinging.\n4. After the countdown, recording starts automatically. The app will capture 5 full oscillation periods.\n5. A double beep will sound when the measurement is complete.\n\nResults: The app calculates the period (T), frequency (f), and estimated string length (L).\nSaving: You can save the measurement to your history by clicking 'Save Measurement'." />
+
+        <!-- Section 4 -->
+        <Button
+            android:id="@+id/btn_section4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Calculator and Formulas"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="• Calculations: Manually enter parameters to calculate various pendulum characteristics.\n• Formulas: A reference guide for the basic physical formulas used in the app." />
+
+        <!-- Section 5 -->
+        <Button
+            android:id="@+id/btn_section5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. Graphics and History"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="• Graphics: Visualize real-time acceleration data.\n• History: View all previously saved measurements." />
+
+        <!-- Section 6 -->
+        <Button
+            android:id="@+id/btn_section6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. Educational Content"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="• Videos: This section contains helpful videos regarding the physics of oscillations." />
+
+        <!-- Section 7 -->
+        <Button
+            android:id="@+id/btn_section7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7. Navigation Menu"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_content7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="A popup menu is available on the main screen, providing the following options:\n\n• Info: Information about the developer and the application.\n• Back: Navigate to the previous screen.\n• Logout: Sign out of the current account.\n• Exit: Close the application." />
+
+    </LinearLayout>
+</ScrollView>

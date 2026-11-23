@@ -1,0 +1,327 @@
+@startuml
+class ido.dotan.physicspendelumido.SensorMeasurementFragment {
+- SensorManager sensorManager
+- Sensor accelerometer
+- boolean isMeasuring
+- boolean isCountingDown
+- Button btnStartStop
+- TextView tvStatus
+- List<Long> magnitudeZeroCrossingTimes
+- float lastMagnitude
+- float filteredMagnitude
+- float runningAverageMagnitude
+- {static} float ALPHA
+- {static} float ADAPT_RATE
+- HelperDB helperDB
+- double lastMeasuredPeriod
+- ToneGenerator toneGenerator
+- CountDownTimer countDownTimer
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void startCountdown()
+- void startMeasurement()
+- void stopEverything()
++ void onSensorChanged(SensorEvent)
+- void finishAutoMeasurement()
+- void calculateResults()
+- void showSaveConfirmationDialog()
++ void onAccuracyChanged(Sensor,int)
++ void onDestroy()
++ void onPause()
+}
+
+
+class ido.dotan.physicspendelumido.GuideAppFragment {
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+class ido.dotan.physicspendelumido.PendulumView {
+- Paint paint
+- float length
+- float angle
+- float angularVelocity
+- float angularAcceleration
+- float g
+- long lastTime
++ void setLength(float)
+# void onDraw(Canvas)
+}
+
+
+class ido.dotan.physicspendelumido.VideosFragment {
+- EditText etVideoSearch
+- Button btnVideoSearch
+- WebView wvVideo
+- RecyclerView rvSavedVideos
+- HelperDB helperDB
+- VideoAdapter adapter
+- List<HelperDB.VideoItem> savedVideosList
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void checkInternetAndInit()
+- boolean isNetworkAvailable()
+- void showNoInternetDialog()
+- void loadVideosFromDb()
+}
+
+
+class ido.dotan.physicspendelumido.VideosFragment$VideoAdapter {
++ VideoViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(VideoViewHolder,int)
++ int getItemCount()
+}
+
+class ido.dotan.physicspendelumido.VideosFragment$VideoAdapter$VideoViewHolder {
+~ TextView tvTitle
+~ View btnDelete
+}
+
+class ido.dotan.physicspendelumido.CalculatorFragment {
+- {static} String PREFS_NAME
+- {static} String KEY_LENGTH
+- {static} String KEY_GRAVITY
+- {static} String KEY_PERIOD
+- EditText editTextLength
+- RadioGroup radioGroupCalculate
+- RadioButton radioPeriod
+- Button buttonCalculate
+- SharedPreferences sharedPreferences
+- HelperDB helperDB
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void updateInputFields()
+- void calculate()
+- void showSaveConfirmationDialog()
+- void saveToPrefs(double,double,double)
+- void loadLastValues()
+}
+
+
+class ido.dotan.physicspendelumido.HistoryFragment {
+- RecyclerView rvHistory
+- HistoryAdapter adapter
+- List<HelperDB.CalculationItem> calculationsList
+- HelperDB helperDB
+- String currentUserCode
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void loadHistory()
+}
+
+
+class ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter {
++ HistoryViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(HistoryViewHolder,int)
++ int getItemCount()
+}
+
+class ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter$HistoryViewHolder {
+~ TextView tvDate
+~ Button btnDelete
+}
+
+class ido.dotan.physicspendelumido.IdoDotanFragment {
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+class ido.dotan.physicspendelumido.SitesFragment {
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+class ido.dotan.physicspendelumido.MainActivity {
+- Button menuButton
+- Button loginButton
+- Button registryButton
+- Button calculationsButton
+- Button animationButton
+- Button formulasButton
+- Button graphicsButton
+- Button historyButton
+- Button videoButton
+- Button sensorsButton
+# void onCreate(Bundle)
+- void showPopupMenu(View)
+- void logout()
+- void replaceFragment(Fragment)
+- void enableAllButtons()
+- void disableProtectedButtons()
++ void onLoginSuccess()
++ void onRegistrationSuccess()
+}
+
+
+class ido.dotan.physicspendelumido.RegistryFragment {
+- EditText codeEditText
+- EditText passwordEditText
+- Button registerButton
+- TextView messageTextView
+- HelperDB helperDB
+- int failedAttempts
+- OnRegistrationSuccessListener registrationSuccessListener
++ void onAttach(Context)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void registerUser()
+- void handleFailedAttempt()
+}
+
+
+interface ido.dotan.physicspendelumido.RegistryFragment$OnRegistrationSuccessListener {
+~ void onRegistrationSuccess()
+}
+
+class ido.dotan.physicspendelumido.FormulasFragment {
+- CardView currentlyVisibleCard
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void setCardToggle(Button,CardView)
+}
+
+
+class ido.dotan.physicspendelumido.LogInFragment {
+- EditText codeEditText
+- EditText passwordEditText
+- Button loginButton
+- TextView messageTextView
+- HelperDB helperDB
+- OnLoginSuccessListener loginSuccessListener
++ void onAttach(Context)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void loginUser()
+}
+
+
+interface ido.dotan.physicspendelumido.LogInFragment$OnLoginSuccessListener {
+~ void onLoginSuccess()
+}
+
+class ido.dotan.physicspendelumido.GraphicsFragment {
+- GraphView currentlyVisibleGraph
+- double length
+- double gravity
+- double amplitude
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void setGraphToggle(Button,GraphView,Runnable)
+- void setupGraph(GraphView,String)
+- double getPeriod()
+- double getAngularFrequency()
+- void plotDisplacementGraph()
+- void plotVelocityGraph()
+- void plotAccelerationGraph()
+- void plotEnergyGraph()
+}
+
+
+class ido.dotan.physicspendelumido.HelperDB {
++ {static} String DB_FILE
++ {static} String Users_TABLE
++ {static} String USER_CODE
++ {static} String USER_PASSWORD
++ {static} String Videos_TABLE
++ {static} String VIDEO_ID
++ {static} String VIDEO_TITLE
++ {static} String VIDEO_URL
++ {static} String Calculations_TABLE
++ {static} String CALC_ID
++ {static} String CALC_USER_CODE
++ {static} String CALC_L
++ {static} String CALC_G
++ {static} String CALC_T
++ {static} String CALC_DATE
+- ExecutorService executorService
+- Handler handler
++ void onCreate(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
++ void addCalculation(String,double,double,double,String,OnDbOperationCompleteListener)
++ void getUserCalculations(String,OnCalculationsLoadedListener)
++ void deleteCalculation(int,OnDbOperationCompleteListener)
++ void addVideo(String,String,OnDbOperationCompleteListener)
++ void getAllVideos(OnVideosLoadedListener)
++ void deleteVideo(int,OnDbOperationCompleteListener)
++ void isCodeExists(String,OnDbOperationCompleteListener)
++ void addUser(String,String,OnDbOperationCompleteListener)
++ void checkUser(String,String,OnDbOperationCompleteListener)
+}
+
+
+interface ido.dotan.physicspendelumido.HelperDB$OnDbOperationCompleteListener {
+~ void onDbOperationComplete(boolean)
+}
+
+interface ido.dotan.physicspendelumido.HelperDB$OnVideosLoadedListener {
+~ void onVideosLoaded(List<VideoItem>)
+}
+
+interface ido.dotan.physicspendelumido.HelperDB$OnCalculationsLoadedListener {
+~ void onCalculationsLoaded(List<CalculationItem>)
+}
+
+class ido.dotan.physicspendelumido.HelperDB$VideoItem {
++ int id
++ String title
++ String url
+}
+
+class ido.dotan.physicspendelumido.HelperDB$CalculationItem {
++ int id
++ String userCode
++ double l
++ String date
+}
+
+class ido.dotan.physicspendelumido.AnimationFragment {
+- PendulumView pendulumView
+- TextView tvPeriod
+- SeekBar sbLength
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void updatePendulum(int,int)
+}
+
+
+class ido.dotan.physicspendelumido.InfoActivity {
+- BottomNavigationView.OnItemSelectedListener navListener
+# void onCreate(Bundle)
+}
+
+
+class ido.dotan.physicspendelumido.StartActivity {
+- TextView timerTextView
+# void onCreate(Bundle)
+}
+
+
+
+
+android.hardware.SensorEventListener <|.. ido.dotan.physicspendelumido.SensorMeasurementFragment
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.SensorMeasurementFragment
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.GuideAppFragment
+android.view.View <|-- ido.dotan.physicspendelumido.PendulumView
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.VideosFragment
+ido.dotan.physicspendelumido.VideosFragment +.. ido.dotan.physicspendelumido.VideosFragment$VideoAdapter
+ido.dotan.physicspendelumido.Adapter <|-- ido.dotan.physicspendelumido.VideosFragment$VideoAdapter
+ido.dotan.physicspendelumido.VideosFragment$VideoAdapter +.. ido.dotan.physicspendelumido.VideosFragment$VideoAdapter$VideoViewHolder
+ido.dotan.physicspendelumido.ViewHolder <|-- ido.dotan.physicspendelumido.VideosFragment$VideoAdapter$VideoViewHolder
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.CalculatorFragment
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.HistoryFragment
+ido.dotan.physicspendelumido.HistoryFragment +.. ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter
+ido.dotan.physicspendelumido.Adapter <|-- ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter
+ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter +.. ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter$HistoryViewHolder
+ido.dotan.physicspendelumido.ViewHolder <|-- ido.dotan.physicspendelumido.HistoryFragment$HistoryAdapter$HistoryViewHolder
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.IdoDotanFragment
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.SitesFragment
+ido.dotan.physicspendelumido.OnLoginSuccessListener <|.. ido.dotan.physicspendelumido.MainActivity
+ido.dotan.physicspendelumido.OnRegistrationSuccessListener <|.. ido.dotan.physicspendelumido.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- ido.dotan.physicspendelumido.MainActivity
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.RegistryFragment
+ido.dotan.physicspendelumido.RegistryFragment +.. ido.dotan.physicspendelumido.RegistryFragment$OnRegistrationSuccessListener
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.FormulasFragment
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.LogInFragment
+ido.dotan.physicspendelumido.LogInFragment +.. ido.dotan.physicspendelumido.LogInFragment$OnLoginSuccessListener
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.GraphicsFragment
+android.database.sqlite.SQLiteOpenHelper <|-- ido.dotan.physicspendelumido.HelperDB
+ido.dotan.physicspendelumido.HelperDB +.. ido.dotan.physicspendelumido.HelperDB$OnDbOperationCompleteListener
+ido.dotan.physicspendelumido.HelperDB +.. ido.dotan.physicspendelumido.HelperDB$OnVideosLoadedListener
+ido.dotan.physicspendelumido.HelperDB +.. ido.dotan.physicspendelumido.HelperDB$OnCalculationsLoadedListener
+ido.dotan.physicspendelumido.HelperDB +.. ido.dotan.physicspendelumido.HelperDB$VideoItem
+ido.dotan.physicspendelumido.HelperDB +.. ido.dotan.physicspendelumido.HelperDB$CalculationItem
+androidx.fragment.app.Fragment <|-- ido.dotan.physicspendelumido.AnimationFragment
+androidx.appcompat.app.AppCompatActivity <|-- ido.dotan.physicspendelumido.InfoActivity
+androidx.appcompat.app.AppCompatActivity <|-- ido.dotan.physicspendelumido.StartActivity
+@enduml
